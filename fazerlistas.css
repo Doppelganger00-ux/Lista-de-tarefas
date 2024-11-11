@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f8d7da, #5ec9d7);
+}
+
+#app {
+    background: white;
+    padding: 80px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px #4f7bbe;
+    text-align: center;
+    width: 98%;
+    max-width: 500px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#app:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 36px #fdcae1;
+}
+
+h1 {
+    color: #5e4fbe;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #b0c4de;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #87cefa;
+    background-color: #f0f8ff;
+    outline: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    width: 100%;
+}
+
+li {
+    background: #e6e6fa;
+    margin-bottom: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    transition: background 0.3s, transform 0.3s;
+    position: relative;
+}
+
+li.completed {
+    background: #c0bdbd;
+    text-decoration: line-through;
+}
+
+li.completed.celebrate {
+    animation: celebrate-animation 1s ease-in-out;
+}
+
+@keyframes celebrate-animation {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1) rotate(5deg); }
+    100% { transform: scale(1) rotate(-5deg); }
+}
+
+li:hover {
+    background: #d8bfd8;
+    transform: scale(1.02);
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #afeeee;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #00ced1;
+    transform: translateY(-2px);
+}
+
+#resetButton {
+    background-color: #ff6347;
+    margin-top: 20px;
+}
+
+#resetButton:hover {
+    background-color: #ff4500;
+}
+
+@media (max-width: 600px) {
+    #app {
+        padding: 30px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
